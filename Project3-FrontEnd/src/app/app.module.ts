@@ -8,13 +8,15 @@ import { MenuComponent } from './menu/menu.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {MatButtonModule} from '@angular/material/button';
+import { RecPageComponent } from './rec-page/rec-page.component';
 
 
 @NgModule({
   declarations: [
     HomePageComponent,
     SearchPageComponent,
-    MenuComponent
+    MenuComponent,
+    RecPageComponent
     
   ],
   imports: [
