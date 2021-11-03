@@ -1,2 +1,23 @@
-<p>search-page works!</p>
+<div class="main-flex">
+    <div class="search-flex">
+        <form [formGroup]='formGroup' class='form-container' (ngSubmit)="processForm()">
+            
+            <mat-form-field appearance="outline" id="genre-select">
+                <mat-label for='genre'>Genre</mat-label>
+                <mat-select placeholder="Genre" formControlName="genre">
+                    <mat-option>None</mat-option>
+                    <mat-option value="Fighting">Fighting</mat-option>
+                    <mat-option value="Fighting">First-Person Shooter</mat-option>
+                    <mat-option value="Fighting">Racing</mat-option>
+                    <mat-option value="Fighting">RPG</mat-option>
+                </mat-select>
+            </mat-form-field>
 
+
+            <button mat-button class="submit-button" type="submit" id="submit-button">Search</button>
+        </form>
+    </div>
+    <div class="card-flex">
+        
+    </div>
+</div>

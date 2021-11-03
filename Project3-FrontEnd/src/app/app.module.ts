@@ -11,6 +11,12 @@ import {MatButtonModule} from '@angular/material/button';
 import { RecPageComponent } from './rec-page/rec-page.component';
 import {MatIconModule} from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
+import {MatRippleModule} from '@angular/material/core';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {ReactiveFormsModule} from '@angular/forms';
+import {MatSelectModule} from '@angular/material/select';
+
+
 
 
 @NgModule({
@@ -27,7 +33,11 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     MatButtonModule,
     MatIconModule,
-    HttpClientModule
+    HttpClientModule,
+    MatRippleModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [MenuComponent]
