@@ -24,25 +24,28 @@
             height: 100px;
             width: 100px;
             margin-left: 20px;
+            cursor: pointer;
         }
 
-       #menu-button{
-           height: 40px;
-           width: 80px;
-           font-size: 15px;
-           margin-left: 50px;
-           color: white;
-           border-color: white;
-       }
+        #menu-button{
+            height: 45px;
+            width: 95px;
+            font-size: 30px;
+            font-weight: 599;
+            margin-left: 50px;
+            font-family: 'Open Sans Condensed', sans-serif;
 
-       #menu-button-long{
-        height: 40px;
-        width: 170px;
-        font-size: 15px;
-        margin-left: 50px;
-        color: white;
-        border-color: white;
-    }
+        }
+
+        #menu-button-long{
+            height: 45px;
+            width: 220px;
+            font-size: 30px;
+            font-weight: 500;
+            margin-left: 50px;
+            font-family: 'Open Sans Condensed', sans-serif;
+
+        }
 
 
     }

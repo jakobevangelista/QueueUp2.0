@@ -1,0 +1,16 @@
+.main-flex{
+    display: flex;
+    height: 90vh;
+    width: 100%;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    #home-image{
+        width: 700px;
+        height: 700px;
+        box-shadow: 10px 10px 20px lightgray;
+        border-radius: 50px;
+    }
+}
