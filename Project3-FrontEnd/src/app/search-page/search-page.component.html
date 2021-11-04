@@ -1,9 +1,11 @@
 <div class="main-flex">
     <div class="search-flex">
         <form [formGroup]='formGroup' class='form-container' (ngSubmit)="processForm()">
-            
-            <mat-form-field appearance="outline" id="genre-select">
-                <mat-label for='genre'>Genre</mat-label>
+            <button mat-button class="clear-button" type="reset" id="reset-button">Clear</button>
+
+
+            <mat-form-field appearance="fill" id="genre-select">
+                <mat-label for='genre' id="genre-label">Genre</mat-label>
                 <mat-select placeholder="Genre" formControlName="genre">
                     <mat-option>None</mat-option>
                     <mat-option value="Fighting">Fighting</mat-option>
@@ -18,6 +20,12 @@
         </form>
     </div>
     <div class="card-flex">
-        
+        <app-videogame-card></app-videogame-card>
+        <app-videogame-card></app-videogame-card>
+        <app-videogame-card></app-videogame-card>
+        <app-videogame-card></app-videogame-card>
+        <app-videogame-card></app-videogame-card>
+        <app-videogame-card></app-videogame-card>
+        <app-videogame-card></app-videogame-card>
     </div>
 </div>

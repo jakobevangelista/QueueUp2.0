@@ -15,6 +15,7 @@ import {MatRippleModule} from '@angular/material/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {ReactiveFormsModule} from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
+import { VideogameCardComponent } from './videogame-card/videogame-card.component';
 
 
 
@@ -24,7 +25,8 @@ import {MatSelectModule} from '@angular/material/select';
     HomePageComponent,
     SearchPageComponent,
     MenuComponent,
-    RecPageComponent
+    RecPageComponent,
+    VideogameCardComponent
     
   ],
   imports: [
