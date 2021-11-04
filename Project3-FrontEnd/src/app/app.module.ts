@@ -16,6 +16,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {ReactiveFormsModule} from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
 import { VideogameCardComponent } from './videogame-card/videogame-card.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+
 
 
 
@@ -39,7 +41,8 @@ import { VideogameCardComponent } from './videogame-card/videogame-card.componen
     MatRippleModule,
     MatFormFieldModule,
     ReactiveFormsModule,
-    MatSelectModule
+    MatSelectModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [MenuComponent]
