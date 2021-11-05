@@ -5,6 +5,7 @@ const express = require('express');
 const app = express();
 
 app.use(express.json());
+const RawgGenreController = require('./controller/rawggenrecontroller.js')
 
 app.get('/', (req, res) => {
     res.send('this is working');
@@ -22,9 +23,7 @@ app.post('/twitchCall', (req, res) => {
   res.send('This is endpoint for twitch api');
 });
 
-app.post('/RAWGCall', (req, res) => {
-  res.send('This is endpoint for ')
-})
+app.post('/RAWGCall', RawgGenreController)
 
 app.listen(3000, ()=> {
     console.log("App is listening the local host");
