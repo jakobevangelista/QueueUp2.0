@@ -15,13 +15,10 @@ export class VideogameCardComponent implements OnInit {
 
   twitterArray: any = []
   valueToCheck = false
+  buttonVal = true
 
 
   changeValue(){
-    this.valueToCheck = true
-  }
-
-  ngOnInit(): void {
     var body = {
       keyword: this.gameName
     }
@@ -30,12 +27,14 @@ export class VideogameCardComponent implements OnInit {
       this.http.post("twitterCall", body)
         .toPromise()
         .then(
-          res=>{
+          res=>{            
             var resultArray = Object.entries(res)
             var grabText = resultArray[0][1]
             for(let i = 0; i < 5; i++){
               this.twitterArray.push(grabText[i]['text'])
             }
+            this.valueToCheck = true
+            this.buttonVal = false
             resolve(res)
           },
           msg=>{
@@ -44,6 +43,10 @@ export class VideogameCardComponent implements OnInit {
         )
 
     })
+  }
+
+  ngOnInit(): void {
+    
   }
 
 

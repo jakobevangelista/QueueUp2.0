@@ -5,15 +5,14 @@ const express = require('express');
 const app = express();
 
 app.use(express.json());
-const RawgGenreController = require('./controller/rawggenrecontroller.js')
+const RawgGenreController = require('./controller/RAWGGenreController.js');
+const TwitterController = require('./controller/TwitterController');
 
 app.get('/', (req, res) => {
     res.send('this is working');
 })
 
-app.post('/twitterCall', (req, res) =>{
-  res.send(twit.geTweet(req.body.keyword));
-});
+app.post('/twitterCall', TwitterController)
 
 app.post('/IGDBCall', (req, res) => {
   res.send('This is the endpoint for IGDB API');

@@ -1,12 +1,9 @@
 const twit = require('twit');
 require('dotenv').config();
-const express = require('express');
-
-const app = express();
-
 var finalData = '';
 
-function geTweet(keyword){
+
+module.exports = (req,res) => {
     var T = new twit({
         consumer_key: process.env.c_key,
         consumer_secret: process.env.c_secret,
@@ -15,21 +12,22 @@ function geTweet(keyword){
     });
     
     let params = {
-        q : keyword,
+        q : req.body.keyword,
         count: 10, 
         lang: 'en',
         result_type: 'mixed'
     }
     
-    
+    console.log(req.body.keyword)
     T.get('search/tweets', params, (err, data) => {
         if(err){
+            print(err)
             return null;
+        } else {
+            finalData = data;
+            res.send(finalData)
         }
-        finalData = data;
+
     });
-    return finalData;
 
 }
-
-module.exports = {geTweet};
