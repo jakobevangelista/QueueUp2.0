@@ -32,16 +32,16 @@ module.exports = (req,res) => {
     // 28-board-games
     // 34-educational
     // 17-card
-    const req = https.request(options, res => {
-        console.log(`statusCode: ${res.statusCode}`)
+    const request = https.request(options, response => {
+        console.log(`statusCode: ${response.statusCode}`)
         var str = "";
-        res.on('data', d => {
+        response.on('data', d => {
             // process.stdout.write(d)
             str += d;
             // console.log(JSON.parse(d))
         })
 
-        res.on('end', function(){
+        response.on('end', function(){
             // console.log(str)
             var res_json = JSON.parse(str)
             var arr = []
@@ -56,10 +56,10 @@ module.exports = (req,res) => {
         })
     })
 
-    req.on('error', error => {
+    request.on('error', error => {
         console.error(error)
         res.status(400).send("bad")
     })
 
-    req.end()
+    request.end()
 }

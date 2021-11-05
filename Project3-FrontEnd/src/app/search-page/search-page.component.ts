@@ -20,39 +20,30 @@ export class SearchPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
-  twitterArray: string[] = []
-
+  RAWGData: any = []
   processForm(){
-    var body = {
-      keyword: "Valorant"
-    }
-    this.formGroup.reset
-    this.twitterArray = []
+    if(this.formGroup.value.genre == ""){
+      console.log("Dont break")
+    } else {
+      var body = {
+        genre: this.formGroup.value.genre
+      }
+      this.formGroup.reset
 
-    let twitterPromise = new Promise((resolve, reject) => {
-      this.http.post("twitterCall", body)
+      let rawgCall = new Promise((resolve, reject) => {
+        this.http.post("RAWGCall", body)
         .toPromise()
         .then(
-          res=>{
-            var resultArray = Object.entries(res)
-            var grabText = resultArray[0][1]
-            for(let i = 0; i < 5; i++){
-              this.twitterArray.push(grabText[i]['text'])
-            }
-
-            console.log(this.twitterArray[1])
+          res => {
+            this.RAWGData = res
             resolve(res)
           },
           msg=>{
             reject(msg)
           }
         )
-
-    })
-
-
-
+      })  
+    }
   }
 
 }

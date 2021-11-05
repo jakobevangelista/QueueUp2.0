@@ -1,12 +1,17 @@
 <div class="card-flex">
     <div class="image-flex">
-        <img src="../../assets/Logo-White.png">
+        <img src={{gameCoverArt}}>
     </div>
     <div class="header-flex">
-        
+        <p>{{ gameName }}</p>
     </div>
     <div class="twitter-flex">
-
+        <button mat-raised-button (click)="changeValue()">Show Twitter Content</button>
+        <div *ngIf="valueToCheck">
+            <div *ngFor="let item of twitterArray">
+                <li>{{ item }} </li>
+            </div>
+        </div>
     </div>
 </div>    
 
