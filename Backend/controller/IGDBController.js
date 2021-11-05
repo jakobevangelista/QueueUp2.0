@@ -45,7 +45,7 @@ module.exports = (req,res) => {
         });
     }
     
-    getGamesWithGenre("Strategy"); // genre name is case sensitive
+    getGamesWithGenre(req.body.genre); // genre name is case sensitive
 }
 
 
