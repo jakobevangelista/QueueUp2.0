@@ -8,7 +8,11 @@
                 <mat-label for='genre' id="genre-label">Genre</mat-label>
                 <mat-select placeholder="Genre" formControlName="genre">
                     <mat-option>None</mat-option>
-                    <mat-option value="action">Action</mat-option>
+                    <mat-option value="Shooter">Shooter</mat-option>
+                    <mat-option value="Racing">Racing</mat-option>
+                    <mat-option value="Strategy">Stategy</mat-option>
+                    <mat-option value="Fighting">Fighting</mat-option>
+                    <mat-option value="Adventure">Adventure</mat-option>
                 </mat-select>
             </mat-form-field>
 
@@ -18,6 +22,9 @@
     </div>
     <div class="card-flex">
         <div *ngFor="let game of RAWGData">
+            <app-videogame-card [gameName]="game[0]" [gameCoverArt]="game[1]"></app-videogame-card>
+        </div>
+        <div *ngFor="let game of IGDBData">
             <app-videogame-card [gameName]="game[0]" [gameCoverArt]="game[1]"></app-videogame-card>
         </div>
     </div>

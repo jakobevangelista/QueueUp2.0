@@ -1,4 +1,3 @@
-const request = require('https');
 module.exports = (req,res) => {
     // uses the request package
     // store the RAWG API key somewhere

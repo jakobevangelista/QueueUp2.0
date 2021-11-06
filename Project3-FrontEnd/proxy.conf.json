@@ -6,5 +6,9 @@
     "/RAWGCall": {
       "target": "http://localhost:3000",
       "secure": false
+    },
+    "/IGDBCall": {
+      "target": "http://localhost:3000",
+      "secure": false
     }
 }

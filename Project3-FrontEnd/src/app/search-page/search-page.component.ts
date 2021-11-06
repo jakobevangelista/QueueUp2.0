@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { HttpClient, HttpContext, HttpHeaders, HttpParams } from '@angular/common/http';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -10,7 +11,7 @@ import { HttpClient, HttpContext, HttpHeaders, HttpParams } from '@angular/commo
 })
 export class SearchPageComponent implements OnInit {
 
-  constructor(private fb: FormBuilder, private http: HttpClient) { }
+  constructor(private fb: FormBuilder, private http: HttpClient, private _snackBar: MatSnackBar) { }
   
   
   formGroup = this.fb.group({
@@ -21,17 +22,21 @@ export class SearchPageComponent implements OnInit {
   }
 
   RAWGData: any = []
+  IGDBData: any = []
   processForm(){
-    if(this.formGroup.value.genre == ""){
-      console.log("Dont break")
+    if(this.formGroup.value.genre == null){
+      this._snackBar.open("Please enter a input field", "Close")
     } else {
-      var body = {
+      var bodyRAWG = {
+        genre: this.formGroup.value.genre.toLowerCase()
+      }
+      var bodyIGDB = {
         genre: this.formGroup.value.genre
       }
       this.formGroup.reset
 
       let rawgCall = new Promise((resolve, reject) => {
-        this.http.post("RAWGCall", body)
+        this.http.post("RAWGCall", bodyRAWG)
         .toPromise()
         .then(
           res => {
@@ -42,7 +47,22 @@ export class SearchPageComponent implements OnInit {
             reject(msg)
           }
         )
-      })  
+      })
+
+
+      let IGDBCall = new Promise((resolve, reject) => {
+        this.http.post("IGDBCall", bodyIGDB)
+        .toPromise()
+        .then(
+          res => {
+            this.IGDBData = res
+            resolve(res)
+          },
+          msg => {
+            reject(msg)
+          }
+        )
+      })
     }
   }
 

@@ -3,11 +3,9 @@
 // POST https://id.twitch.tv/oauth2/token?client_id=yx9j15fb7kntnqe8xy0abmdfl04pnx&client_secret=0p3ltlqazwd0izn39idbrld8tmradq&grant_type=client_credentials
 
 var request = require('request');
-
 module.exports = (req,res) => {
-    function getGamesWithGenre(genre){
-        // retrieve the names for 10 games whose genre = genre
-        var options = {
+// retrieve the names for 10 games whose genre = genre
+    var options = {
         'method': 'POST',
         'url': 'https://api.igdb.com/v4/games/', // GAMES ENDPOINT
         'headers': {
@@ -15,22 +13,21 @@ module.exports = (req,res) => {
             'Authorization': 'Bearer bwpah7j4u5nzokow0itm08symaq0vp',
             'Content-Type': 'text/plain'
         },
-        body: 'fields *, cover.*; limit 10; where genres.name = ("' + genre + '") & rating > 0; sort rating desc;'
+        body: 'fields *, cover.*; limit 10; where genres.name = ("' + req.body.genre + '") & rating > 0; sort rating desc;'
         };
-    
+
         // send request
         var resp;
         request(options, function (error, response) {
         if (error) {
-            // throw new Error(error);
-            res.status(400).send("bad")
+            throw new Error(error);
         }
         // parse response
         resp = JSON.parse(response.body);
         // console.log(resp); // print response
         // var test = resp[0].cover;
         // console.log(test.url);
-    
+
         var finalData = [];
         for (var i in resp) {
             var coverJSON = resp[i].cover;
@@ -39,17 +36,14 @@ module.exports = (req,res) => {
             // push the name and cover url of each game onto the final data array
             finalData.push([name, img]); 
         }
-    
-        // console.log(finalData);
-        res.status(200).send(arr)
+
+            res.send(finalData).status(200)
         });
-    }
-    
-    getGamesWithGenre(req.body.genre); // genre name is case sensitive
-}
+}   
 
 
-module.exports = {getGamesWithGenre};
+
+
 
 
 // LIST of genres

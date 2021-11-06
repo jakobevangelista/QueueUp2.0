@@ -1,4 +1,3 @@
-
 // Get an app access token by making this request
 // POST https://id.twitch.tv/oauth2/token?client_id=yx9j15fb7kntnqe8xy0abmdfl04pnx&client_secret=0p3ltlqazwd0izn39idbrld8tmradq&grant_type=client_credentials
 
