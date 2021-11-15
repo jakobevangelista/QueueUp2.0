@@ -13,7 +13,7 @@ module.exports = (req,res) => {
             'Authorization': 'Bearer bwpah7j4u5nzokow0itm08symaq0vp',
             'Content-Type': 'text/plain'
         },
-        body: 'fields *, cover.*; limit 10; where genres.name = ("' + req.body.genre + '") & rating > 8; sort rating desc;'
+        body: 'fields *, cover.*; limit 10; where genres.name = ("' + req.body.genre + '") & rating > 80; sort rating desc;'
         };
 
         // send request
@@ -33,6 +33,7 @@ module.exports = (req,res) => {
             var coverJSON = resp[i].cover;
             var name = resp[i].name;
             var img = coverJSON.url;
+            var img = img.replace("thumb", "1080p")
             // push the name and cover url of each game onto the final data array
             finalData.push([name, img]); 
         }

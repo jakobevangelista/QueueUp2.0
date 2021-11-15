@@ -1,6 +1,6 @@
 .main-flex{
     display: flex;
-    height: 95vh;
+    height: 100vh;
     width: 100%;
     background-color: #eaeef0;
 
@@ -21,7 +21,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    height: 100vh;
+    height: auto;
     width: 100%;
     background-color: #eaeef0;
 
@@ -42,31 +42,15 @@
         background-color: #28282B;
         border-bottom-left-radius: 500px;
         border-top-left-radius: 500px;
-
+        justify-content: center;
+        align-items: center;
     }
 
-    .guide-video::before{
-        content: '';
-        position: absolute;
-        top: 35%;
-        left: -10%;
-        background-color: #eaeef0;
-        border-radius: 50%;
-        height: 300px;
-        width: 300px;
-        animation: test 2s 1;
+    .guide-video video{
+        margin-left: 100px;
+        height: 1000px;
+        width: 1000px;
 
-
-        @keyframes test {
-            0%{
-                left: -100%;
-            }
-            100%{
-                left: -10%;
-            }
-            
-        }
     }
-
 
 }

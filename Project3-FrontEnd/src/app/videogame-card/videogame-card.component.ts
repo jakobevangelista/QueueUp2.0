@@ -17,7 +17,7 @@ export class VideogameCardComponent implements OnInit {
   valueToCheck = false
   buttonVal = true
 
-
+  showText = false
   changeValue(){
     var body = {
       keyword: this.gameName
@@ -30,21 +30,24 @@ export class VideogameCardComponent implements OnInit {
           res=>{            
             var resultArray = Object.entries(res)
             var grabText = resultArray[0][1]
-            for(let i = 0; i < 5; i++){
-              this.twitterArray.push(grabText[i]['text'])
+            try{
+              for(let i = 0; i < 5; i++){
+                this.twitterArray.push(grabText[i]['text'])
+              }
+              this.valueToCheck = true
+              this.buttonVal = false
+            } catch(error){
+              this.showText = true
+              this.buttonVal = false
             }
-            this.valueToCheck = true
-            this.buttonVal = false
             resolve(res)
           },
           msg=>{
             reject(msg)
           }
         )
-
     })
   }
-
   ngOnInit(): void {
     
   }

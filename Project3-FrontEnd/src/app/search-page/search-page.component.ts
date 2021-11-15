@@ -79,7 +79,7 @@ export class SearchPageComponent implements OnInit {
               reject(msg)
             }
           )
-        })
+        })        
       }
     }
   }
