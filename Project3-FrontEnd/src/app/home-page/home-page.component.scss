@@ -16,3 +16,57 @@
         border-radius: 20%;
     }
 }
+
+.guide-flex{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 100vh;
+    width: 100%;
+    background-color: #eaeef0;
+
+    .guide-text{
+        display: flex;
+        width: 30%;
+        height: inherit;
+
+        
+    
+    }
+
+    .guide-video{
+        position: relative;
+        display: flex;
+        width: 70%;
+        height: inherit;
+        background-color: #28282B;
+        border-bottom-left-radius: 500px;
+        border-top-left-radius: 500px;
+
+    }
+
+    .guide-video::before{
+        content: '';
+        position: absolute;
+        top: 35%;
+        left: -10%;
+        background-color: #eaeef0;
+        border-radius: 50%;
+        height: 300px;
+        width: 300px;
+        animation: test 2s 1;
+
+
+        @keyframes test {
+            0%{
+                left: -100%;
+            }
+            100%{
+                left: -10%;
+            }
+            
+        }
+    }
+
+
+}

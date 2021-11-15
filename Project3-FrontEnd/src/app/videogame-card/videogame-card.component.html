@@ -6,7 +6,7 @@
         <p>{{ gameName }}</p>
     </div>
     <div class="twitter-flex">
-        <button mat-button (click)="changeValue()" *ngIf="this.buttonVal" id="button">Show Twitter Content</button>
+        <button mat-rasied-button (click)="changeValue()" *ngIf="this.buttonVal" id="button">Show Twitter Content</button>
         <div *ngIf="valueToCheck">
             <div *ngFor="let item of twitterArray">
                 <li>{{ item }} </li>

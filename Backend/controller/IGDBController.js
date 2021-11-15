@@ -13,7 +13,7 @@ module.exports = (req,res) => {
             'Authorization': 'Bearer bwpah7j4u5nzokow0itm08symaq0vp',
             'Content-Type': 'text/plain'
         },
-        body: 'fields *, cover.*; limit 10; where genres.name = ("' + req.body.genre + '") & rating > 0; sort rating desc;'
+        body: 'fields *, cover.*; limit 10; where genres.name = ("' + req.body.genre + '") & rating > 8; sort rating desc;'
         };
 
         // send request
