@@ -22,6 +22,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatInputModule} from '@angular/material/input';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { RecPage2Component } from './rec-page2/rec-page2.component';
+import { RecPage3Component } from './rec-page3/rec-page3.component';
 
 
 
@@ -35,7 +37,9 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     SearchPageComponent,
     MenuComponent,
     RecPageComponent,
-    VideogameCardComponent
+    VideogameCardComponent,
+    RecPage2Component,
+    RecPage3Component
     
   ],
   imports: [
