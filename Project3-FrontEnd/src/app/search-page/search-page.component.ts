@@ -13,9 +13,11 @@ export class SearchPageComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private http: HttpClient, private _snackBar: MatSnackBar) { }
   
-  
+  //Setting up the form group
   formGroup = this.fb.group({
-    genre: new FormControl(null, [Validators.required])
+    genre: new FormControl(null, [Validators.required]),
+    platform: new FormControl(null, [Validators.required]),
+    multi: new FormControl(null, [Validators.required])
   })
 
   ngOnInit(): void {
@@ -27,9 +29,14 @@ export class SearchPageComponent implements OnInit {
   processForm(){
     this.RAWGData = []
     this.IGDBData = []
+
+    //Simple error checking
     if(this.formGroup.value.genre == null){
       this._snackBar.open("Please enter a input field", "Close")
     } else {
+      console.log(this.formGroup.value.multi)
+
+      //Creating body responses
       var bodyRAWG = {
         genre: this.formGroup.value.genre.toLowerCase()
       }
@@ -37,7 +44,8 @@ export class SearchPageComponent implements OnInit {
         genre: this.formGroup.value.genre
       }
       this.formGroup.reset
-      
+
+      //Handling for some difference in genres
       let rawgOff = false
       let igdbOff = false
       if(this.formGroup.value.genre == "Point-and-click" || this.formGroup.value.genre == "Simulator"
@@ -50,7 +58,7 @@ export class SearchPageComponent implements OnInit {
       }
       
 
-
+      //API Calls (can be refined split on value)
       if(!rawgOff){
         let rawgCall = new Promise((resolve, reject) => {
           this.http.post("RAWGCall", bodyRAWG)
@@ -66,6 +74,8 @@ export class SearchPageComponent implements OnInit {
           )
         })
       }
+
+      //API Calls (can be refined split on value)
       if(!igdbOff){
         let IGDBCall = new Promise((resolve, reject) => {
           this.http.post("IGDBCall", bodyIGDB)

@@ -1,6 +1,6 @@
 <div class="main-flex">
     <div class="search-flex">
-        <form [formGroup]='formGroup' class='form-container' (ngSubmit)="processForm()">
+        <form [formGroup]='formGroup' class='form-container' (ngSubmit)="processForm()" >
             <button mat-button class="clear-button" type="reset" id="reset-button">Clear</button>
             <mat-form-field appearance="fill" id="genre-select">
                 <mat-label for='genre' id="genre-label">Genre</mat-label>
@@ -23,6 +23,31 @@
                     <mat-option value="Platformer">Platformer</mat-option>  <!--New Addtion Sprint 2-->
                 </mat-select>
             </mat-form-field>
+            <!--Form group for platform-->
+            <mat-form-field appearance="fill" id="platform-select">
+                <mat-label for='platform' id="platform-label">Platform</mat-label>
+                <mat-select placeholder="Genre" formControlName="genre">
+                   <mat-option value="PC">PC (Windows)</mat-option>
+                   <mat-option value="PlayStation 5">PlayStation 5</mat-option>
+                   <mat-option value="Xbox Series S/X~Xbox Series S|X">XBox Series X/S</mat-option>
+                   <mat-option value="PlayStation 4">PlayStation 4</mat-option>
+                   <mat-option value="Xbox One">XBox One</mat-option>
+                   <mat-option value="PlayStation 3">PlayStation 3</mat-option>
+                   <mat-option value="XBox 360">XBox 360</mat-option>
+                   <mat-option value="Linux">Linux</mat-option>
+                   <mat-option value="iOS">iOS</mat-option>
+                   <mat-option value="Android">Android</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <!--Form group for multiplayer-->
+            <mat-label id="multi-label" for="multi">Multiplayer</mat-label>
+            <mat-radio-group formControlName="multi" aria-label="Select an option">
+                    <mat-radio-button value="1">Yes</mat-radio-button>
+                    <mat-radio-button value="2">No</mat-radio-button>
+            </mat-radio-group>
+           
+
+
             <button mat-button class="submit-button" type="submit" id="submit-button">Search</button>
         </form>
     </div>

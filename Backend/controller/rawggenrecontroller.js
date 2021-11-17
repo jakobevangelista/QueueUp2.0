@@ -62,3 +62,15 @@ module.exports = (req,res) => {
 
     request.end()
 }
+//Platforms
+//PC
+//PlayStation 5
+//Xbox One
+//PlayStation 4
+//Xbox Series S/X
+//Nintendo Switch
+//iOS
+//Android
+//Xbox 360
+//PlayStation 3
+//PlayStation 2

@@ -11,17 +11,19 @@
     .search-flex{
         margin-top: 50px;
         display: flex;
-        width: 50%;
+        width: 70%;
         height: 200px;
         border-radius: 20px;
         box-shadow: 5px 5px 10px rgba(0,0,0,0.2), -5px -5px 10px white, inset 5px 5px 10px rgba(0,0,0,0.2), inset -5px -5px 10px white;
         align-items: center;
-        justify-content: center;
+        justify-content: space-around;
         border: 10px solid #eaeef0;
+
         
         #genre-select{
             font-family: 'Open Sans Condensed', sans-serif;
             font-size: 18px;
+            margin-right: 20px;
 
         }
 
@@ -43,6 +45,17 @@
             color: white;
             font-size: 25px;
             margin-right: 20px;
+        }
+
+        #platform-select{
+            font-family: 'Open Sans Condensed', sans-serif;
+            font-size: 18px;
+            margin-right: 20px;
+
+        }
+
+        #platform-label{
+            font-size: 22px;
         }
     }
 
