@@ -26,10 +26,10 @@
             <!--Form group for platform-->
             <mat-form-field appearance="fill" id="platform-select">
                 <mat-label for='platform' id="platform-label">Platform</mat-label>
-                <mat-select placeholder="Genre" formControlName="genre">
+                <mat-select placeholder="platform" formControlName="platform">
                    <mat-option value="PC">PC (Windows)</mat-option>
                    <mat-option value="PlayStation 5">PlayStation 5</mat-option>
-                   <mat-option value="Xbox Series S/X~Xbox Series S|X">XBox Series X/S</mat-option>
+                   <mat-option value="Xbox Series S/X">XBox Series X/S</mat-option>
                    <mat-option value="PlayStation 4">PlayStation 4</mat-option>
                    <mat-option value="Xbox One">XBox One</mat-option>
                    <mat-option value="PlayStation 3">PlayStation 3</mat-option>
@@ -40,11 +40,8 @@
                 </mat-select>
             </mat-form-field>
             <!--Form group for multiplayer-->
-            <mat-label id="multi-label" for="multi">Multiplayer</mat-label>
-            <mat-radio-group formControlName="multi" aria-label="Select an option">
-                    <mat-radio-button value="1">Yes</mat-radio-button>
-                    <mat-radio-button value="2">No</mat-radio-button>
-            </mat-radio-group>
+            <mat-checkbox  id="multi-label" formControlName="multi">Multiplayer</mat-checkbox>
+
            
 
 

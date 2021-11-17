@@ -16,8 +16,8 @@ export class SearchPageComponent implements OnInit {
   //Setting up the form group
   formGroup = this.fb.group({
     genre: new FormControl(null, [Validators.required]),
-    platform: new FormControl(null, [Validators.required]),
-    multi: new FormControl(null, [Validators.required])
+    platform: new FormControl(null),
+    multi: new FormControl(false)
   })
 
   ngOnInit(): void {
@@ -32,16 +32,20 @@ export class SearchPageComponent implements OnInit {
 
     //Simple error checking
     if(this.formGroup.value.genre == null){
-      this._snackBar.open("Please enter a input field", "Close")
+      this._snackBar.open("Genre must be given!", "Close")
     } else {
-      console.log(this.formGroup.value.multi)
+      console.log(this.formGroup.value.platform)
 
       //Creating body responses
       var bodyRAWG = {
-        genre: this.formGroup.value.genre.toLowerCase()
+        genre: this.formGroup.value.genre.toLowerCase(),
+        multiplayer: this.formGroup.value.multi,
+        platform: this.formGroup.value.platform
       }
       var bodyIGDB = {
-        genre: this.formGroup.value.genre
+        genre: this.formGroup.value.genre,
+        multiplayer: this.formGroup.value.multi,
+        platform: this.formGroup.value.platform
       }
       this.formGroup.reset
 
@@ -59,21 +63,21 @@ export class SearchPageComponent implements OnInit {
       
 
       //API Calls (can be refined split on value)
-      if(!rawgOff){
-        let rawgCall = new Promise((resolve, reject) => {
-          this.http.post("RAWGCall", bodyRAWG)
-          .toPromise()
-          .then(
-            res => {
-              this.RAWGData = res
-              resolve(res)
-            },
-            msg=>{
-              reject(msg)
-            }
-          )
-        })
-      }
+      // if(!rawgOff){
+      //   let rawgCall = new Promise((resolve, reject) => {
+      //     this.http.post("RAWGCall", bodyRAWG)
+      //     .toPromise()
+      //     .then(
+      //       res => {
+      //         this.RAWGData = res
+      //         resolve(res)
+      //       },
+      //       msg=>{
+      //         reject(msg)
+      //       }
+      //     )
+      //   })
+      // }
 
       //API Calls (can be refined split on value)
       if(!igdbOff){

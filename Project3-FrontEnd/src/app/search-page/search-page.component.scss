@@ -11,7 +11,7 @@
     .search-flex{
         margin-top: 50px;
         display: flex;
-        width: 70%;
+        width: 60%;
         height: 200px;
         border-radius: 20px;
         box-shadow: 5px 5px 10px rgba(0,0,0,0.2), -5px -5px 10px white, inset 5px 5px 10px rgba(0,0,0,0.2), inset -5px -5px 10px white;
@@ -55,6 +55,11 @@
         }
 
         #platform-label{
+            font-size: 22px;
+        }
+
+        #multi-label{
+            font-family: 'Open Sans Condensed', sans-serif;
             font-size: 22px;
         }
     }
