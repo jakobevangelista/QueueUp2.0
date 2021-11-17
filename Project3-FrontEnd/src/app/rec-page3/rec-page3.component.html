@@ -1,3 +1,11 @@
 <div class="main-container">
-  
+    <div class="search-container">
+        <form [formGroup]='formGroup' class='form-container' (ngSubmit)="processForm()">
+            <mat-form-field appearance="fill">
+                <mat-label>Keyword</mat-label>
+                <input matInput formControlName="key">
+            </mat-form-field>
+            <button mat-button class="submit-button" type="submit" id="submit-button">Submit</button>
+        </form>
+      </div>
 </div>

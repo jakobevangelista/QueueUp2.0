@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-rec-page3',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecPage3Component implements OnInit {
 
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
+
+  formGroup = this.fb.group({
+    key: new FormControl(null),
+    
+  })
 
   ngOnInit(): void {
+  }
+
+  processForm(){
+
   }
 
 }
