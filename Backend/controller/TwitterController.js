@@ -9,7 +9,7 @@ module.exports = (req,res) => {
     console.log(newQuery);
     var options = {
         'method': 'GET',
-        'url': 'https://api.twitter.com/2/tweets/search/recent?query='+ newQuery + '%20lang%3Aen%20-has%3Amedia%20-has%3Alinks%20has%3Ahashtags',
+        'url': 'https://api.twitter.com/2/tweets/search/recent?query='+ newQuery + '%20lang%3Aen%20-has%3Amedia%20-is%3Aretweet',
         'headers': {
           'Authorization': 'Bearer AAAAAAAAAAAAAAAAAAAAABYhVQEAAAAACQjzSUb8KT3VG1nQgJdccQED%2F3E%3D9xRG40ob5IvMQIzuCuY8oU55jkqnAoqq1xWJx5zu7hSVxtuLMH',
         }

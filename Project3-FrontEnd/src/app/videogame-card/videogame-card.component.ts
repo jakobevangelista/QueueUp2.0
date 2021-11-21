@@ -27,15 +27,26 @@ export class VideogameCardComponent implements OnInit {
       this.http.post("twitterCall", body)
         .toPromise()
         .then(
-          res=>{            
-            var resultArray = Object.entries(res)
-            var grabText = resultArray[0][1]
-            for(let i = 0; i < 5; i++){
-              this.twitterArray.push(grabText[i]['text'])
-            }
-            this.valueToCheck = true
-            this.buttonVal = false
-            resolve(res)
+          res=>{  
+            try{
+              var resultArray = Object.entries(res)
+              var grabText = resultArray[0][1]
+              if(grabText.length < 5 && grabText.length > 0)
+              {
+                for(let i = 0; i < grabText.length; i++){
+                  this.twitterArray.push(grabText[i]['text'])
+                }
+              }
+              else{
+                for(let i = 0; i < 5; i++){
+                  this.twitterArray.push(grabText[i]['text'])
+                }
+              }
+              this.valueToCheck = true
+              this.buttonVal = false
+              resolve(res)
+            } catch (e) {
+            }    
           },
           msg=>{
             reject(msg)
