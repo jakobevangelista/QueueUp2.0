@@ -5,6 +5,8 @@
     background-color: #eaeef0;
     justify-content: center;
     align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
 
     .search-container{
       margin-top: 50px;
@@ -16,6 +18,17 @@
       align-items: center;
       justify-content: space-around;
       border: 10px solid #eaeef0;
+    }
+
+    .videogame-container{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 100%;
+      height: auto;
+
+      justify-content: space-around;
+      align-items: center;
     }
   
   }

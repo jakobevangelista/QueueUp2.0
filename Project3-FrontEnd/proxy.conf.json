@@ -10,5 +10,21 @@
     "/IGDBCall": {
       "target": "http://localhost:3000",
       "secure": false
+    },
+    "/Birthyear": {
+      "target": "http://localhost:3000",
+      "secure": false
+    },
+    "/IGDBKey": {
+      "target": "http://localhost:3000",
+      "secure": false
+    },
+    "/IGDBKeyRec": {
+      "target": "http://localhost:3000",
+      "secure": false
+    },
+    "/Twitch": {
+      "target": "http://localhost:3000",
+      "secure": false
     }
 }

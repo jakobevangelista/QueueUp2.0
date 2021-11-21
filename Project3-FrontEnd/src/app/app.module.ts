@@ -24,6 +24,9 @@ import {MatInputModule} from '@angular/material/input';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { RecPage2Component } from './rec-page2/rec-page2.component';
 import { RecPage3Component } from './rec-page3/rec-page3.component';
+import {MatMenuModule} from '@angular/material/menu';
+import { CommonModule } from '@angular/common';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 
 
@@ -58,7 +61,10 @@ import { RecPage3Component } from './rec-page3/rec-page3.component';
     MatProgressSpinnerModule,
     MatRadioModule,
     MatInputModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatMenuModule,
+    CommonModule,
+    MatAutocompleteModule
   ],
   providers: [],
   bootstrap: [MenuComponent]
