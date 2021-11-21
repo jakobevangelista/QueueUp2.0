@@ -1,16 +1,11 @@
-<mat-drawer-container class="example-container" autosize>
-    <mat-drawer #drawer class="example-sidenav" mode="side">
-      <p>Auto-resizing sidenav</p>
-      <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
-      <button (click)="showFiller = !showFiller" mat-raised-button>
-        Toggle extra text
-      </button>
-    </mat-drawer>
-  
-    <div class="example-sidenav-content">
-      <button type="button" mat-button (click)="drawer.toggle()">
-        Toggle sidenav
-      </button>
+<div class="main-container">
+    <div class="search-container">
+     
+    
     </div>
-  
-  </mat-drawer-container>
+    <div class="videogame-container">
+      <div *ngFor="let item of RecommendationArray">
+        <app-videogame-card [gameName]="item[0]" [gameCoverArt]="item[1]"></app-videogame-card>
+      </div>
+    </div>
+  </div>

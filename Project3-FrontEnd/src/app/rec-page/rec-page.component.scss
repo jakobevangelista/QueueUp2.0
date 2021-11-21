@@ -1,16 +1,26 @@
-.example-container {
-    width: 500px;
-    height: 300px;
-    border: 1px solid rgba(0, 0, 0, 0.5);
+.main-container{
+  display: flex;
+  height: 100vh;
+  max-width: 100vw;
+  background-color: #eaeef0;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  .search-container{
+    
   }
-  
-  .example-sidenav-content {
+
+  .videogame-container{
     display: flex;
-    height: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+
+    justify-content: space-around;
     align-items: center;
-    justify-content: center;
   }
-  
-  .example-sidenav {
-    padding: 20px;
-  }
+
+} 

@@ -18,6 +18,16 @@ import {MatSelectModule} from '@angular/material/select';
 import { VideogameCardComponent } from './videogame-card/videogame-card.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatInputModule} from '@angular/material/input';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { RecPage2Component } from './rec-page2/rec-page2.component';
+import { RecPage3Component } from './rec-page3/rec-page3.component';
+import {MatMenuModule} from '@angular/material/menu';
+import { CommonModule } from '@angular/common';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+
 
 
 
@@ -30,7 +40,9 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     SearchPageComponent,
     MenuComponent,
     RecPageComponent,
-    VideogameCardComponent
+    VideogameCardComponent,
+    RecPage2Component,
+    RecPage3Component
     
   ],
   imports: [
@@ -45,7 +57,14 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     ReactiveFormsModule,
     MatSelectModule,
     MatSidenavModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatInputModule,
+    MatCheckboxModule,
+    MatMenuModule,
+    CommonModule,
+    MatAutocompleteModule
   ],
   providers: [],
   bootstrap: [MenuComponent]
