@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+declare var particlesJS: any;
+
 
 @Component({
   selector: 'app-home-page',
@@ -8,11 +9,14 @@ import {HttpClient} from "@angular/common/http";
 })
 export class HomePageComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+   }
+
 
 
   ngOnInit(): void {
-    
+    particlesJS.load('particles-js', '../../assets/particles.json', null);
+
   }
 
 }
