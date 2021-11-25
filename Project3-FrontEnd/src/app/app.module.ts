@@ -27,7 +27,8 @@ import { RecPage3Component } from './rec-page3/rec-page3.component';
 import {MatMenuModule} from '@angular/material/menu';
 import { CommonModule } from '@angular/common';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
-
+import {MatDividerModule} from '@angular/material/divider';
+import {MatListModule} from '@angular/material/list';
 
 
 
@@ -42,7 +43,7 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     RecPageComponent,
     VideogameCardComponent,
     RecPage2Component,
-    RecPage3Component
+    RecPage3Component,
     
   ],
   imports: [
@@ -64,7 +65,9 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     MatCheckboxModule,
     MatMenuModule,
     CommonModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatDividerModule,
+    MatListModule,
   ],
   providers: [],
   bootstrap: [MenuComponent]
