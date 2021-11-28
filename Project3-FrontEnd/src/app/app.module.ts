@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { HomePageComponent } from './home-page/home-page.component';
 import { SearchPageComponent } from './search-page/search-page.component';
-import { MenuComponent } from './menu/menu.component';
+import { DialogContent, DialogContentTwo, MenuComponent } from './menu/menu.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {MatButtonModule} from '@angular/material/button';
@@ -29,6 +29,8 @@ import { CommonModule } from '@angular/common';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 
 
@@ -44,6 +46,8 @@ import {MatListModule} from '@angular/material/list';
     VideogameCardComponent,
     RecPage2Component,
     RecPage3Component,
+    DialogContent,
+    DialogContentTwo
     
   ],
   imports: [
@@ -68,8 +72,10 @@ import {MatListModule} from '@angular/material/list';
     MatAutocompleteModule,
     MatDividerModule,
     MatListModule,
+    MatDialogModule
   ],
   providers: [],
-  bootstrap: [MenuComponent]
+  bootstrap: [MenuComponent],
+  exports: [MenuComponent]
 })
 export class AppModule { }

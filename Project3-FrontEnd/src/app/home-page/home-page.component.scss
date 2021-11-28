@@ -67,7 +67,10 @@
                 height: 8%;
                 background-color: #28282B;
                 color: white;
+                border-radius: 20px;
+                
             }
+
 
         }
     
@@ -77,11 +80,18 @@
             display: flex;
             font-family: 'Open Sans Condensed', sans-serif;
             color: white;
+            animation: wakeUp 3s;               
         }
 
         @keyframes startUp {
             0%{
                 transform: translateX(-1000px);
+            }
+        }
+
+        @keyframes wakeUp{
+            0%{
+                opacity: 0;
             }
         }
 
