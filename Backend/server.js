@@ -12,8 +12,30 @@ const IGDBKeySearch = require('./controller/IGDBKeySearchController.js')
 const IGDBKeyRecommendation = require('./controller/IGDBRecController.js')
 const TwitchController = require('./controller/TwitchController.js')
 
+// Add headers before the routes are defined
+app.use(function (req, res, next) {
 
+    // Website you wish to allow to connect
+    res.setHeader('Access-Control-Allow-Origin', 'https://queueup-front.herokuapp.com');
+    //res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
 
+    // Request methods you wish to allow
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+
+    // Request headers you wish to allow
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+
+    // Set to true if you need the website to include cookies in the requests sent
+    // to the API (e.g. in case you use sessions)
+    res.setHeader('Access-Control-Allow-Credentials', true);
+
+    // Pass to next layer of middleware
+    next();
+});
+
+app.get('/', (req, res) => {
+    res.send('Working')
+})
 app.post('/twitterCall', TwitterController)
 app.post('/IGDBCall', IGDBController)
 app.post('/RAWGCall', RawgGenreController)
@@ -24,6 +46,6 @@ app.post('/IGDBKeyRec', IGDBKeyRecommendation)
 
 
 
-app.listen(3000, ()=> {
+app.listen(process.env.PORT || 3000, ()=> {
     console.log("App is listening on local host");
 })

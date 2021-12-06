@@ -13,7 +13,7 @@ module.exports = (req,res) => {
         'url': 'https://api.igdb.com/v4/games/', // GAMES ENDPOINT
         'headers': {
             'Client-ID': 'yx9j15fb7kntnqe8xy0abmdfl04pnx',
-            'Authorization': 'Bearer 4w8sanv39hzwu0h80okpgviyembiqx',
+            'Authorization': 'Bearer t1hcxh55lx04ekrbq3eizxl0trao5e',
             'Content-Type': 'text/plain'
         },
         body: 'fields genres.name, rating, name, platforms.name, cover.*; limit 10; where genres.name = ("' + req.body.genre + '") & rating > 80 & platforms.name = ("' + req.body.platform + '"); sort rating desc;'
@@ -26,7 +26,7 @@ module.exports = (req,res) => {
         'url': 'https://api.igdb.com/v4/games/', // GAMES ENDPOINT
         'headers': {
             'Client-ID': 'yx9j15fb7kntnqe8xy0abmdfl04pnx',
-            'Authorization': 'Bearer 4w8sanv39hzwu0h80okpgviyembiqx',
+            'Authorization': 'Bearer t1hcxh55lx04ekrbq3eizxl0trao5e',
             'Content-Type': 'text/plain'
         },
         body: 'fields name, rating, genres.name, genres.name, cover.*, multiplayer_modes.*; limit 10; where (multiplayer_modes.campaigncoop = true | multiplayer_modes.dropin = true | multiplayer_modes.lancoop = true | multiplayer_modes.offlinecoop = true | multiplayer_modes.onlinecoop = true | multiplayer_modes.splitscreen = true) & genres.name = ("' + req.body.genre + '") & rating > 80; sort rating desc;'
@@ -38,7 +38,7 @@ module.exports = (req,res) => {
         'url': 'https://api.igdb.com/v4/games/', // GAMES ENDPOINT
         'headers': {
             'Client-ID': 'yx9j15fb7kntnqe8xy0abmdfl04pnx',
-            'Authorization': 'Bearer 4w8sanv39hzwu0h80okpgviyembiqx',
+            'Authorization': 'Bearer t1hcxh55lx04ekrbq3eizxl0trao5e',
             'Content-Type': 'text/plain'
         },
         body: 'fields name, rating, genres.name, cover.*, platforms.name, multiplayer_modes.*; limit 10; where (multiplayer_modes.campaigncoop = true | multiplayer_modes.dropin = true | multiplayer_modes.lancoop = true | multiplayer_modes.offlinecoop = true | multiplayer_modes.onlinecoop = true | multiplayer_modes.splitscreen = true) & genres.name = ("' + req.body.genre + '") & rating > 0 & platforms.name = ("' + req.body.platform + '"); sort rating desc;'
@@ -50,7 +50,7 @@ module.exports = (req,res) => {
         'url': 'https://api.igdb.com/v4/games/', // GAMES ENDPOINT
         'headers': {
             'Client-ID': 'yx9j15fb7kntnqe8xy0abmdfl04pnx',
-            'Authorization': 'Bearer 4w8sanv39hzwu0h80okpgviyembiqx',
+            'Authorization': 'Bearer t1hcxh55lx04ekrbq3eizxl0trao5e',
             'Content-Type': 'text/plain'
         },
         body: 'fields name, rating, cover.*; limit 10; where genres.name = ("' + req.body.genre + '") & rating > 80; sort rating desc;'
@@ -65,6 +65,7 @@ module.exports = (req,res) => {
     }
     // parse response
     resp = JSON.parse(response.body);
+    console.log(resp)
     var finalData = [];
     for (var i in resp) {
         var coverJSON = resp[i].cover;

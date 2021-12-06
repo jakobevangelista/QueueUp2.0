@@ -6,7 +6,7 @@ var options = {
     'url': 'https://api.igdb.com/v4/games/', // GAMES ENDPOINT
     'headers': {
         'Client-ID': 'yx9j15fb7kntnqe8xy0abmdfl04pnx',
-        'Authorization': 'Bearer ccappafd8ac20qkclxalotj1yh0mbh',
+        'Authorization': 'Bearer t1hcxh55lx04ekrbq3eizxl0trao5e',
         'Content-Type': 'text/plain'
     },
     body: 'fields *, name, themes, similar_games.name; limit 500; where name = "' + req.body.name1 + '" | name = "' + req.body.name2 + '";'

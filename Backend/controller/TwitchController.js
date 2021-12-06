@@ -32,13 +32,11 @@ module.exports = (req, res) =>{
             if(err){
                 return console.log(err);
             }
-            console.log('Status: ', respo.statusCode);
             this.toPro = JSON.parse(body)
-            console.log(this.toPro)
             for(let i = 0; i < 20; i++){
                 var name = this.toPro["data"][i]["name"]
                 var img = this.toPro["data"][i]["box_art_url"]
-                var img = img.replace("{width}", "1220")
+                var img = img.replace("{width}", "950")
                 var img = img.replace("{height}", "1080")
                 toSend.push([name, img])
             }  

@@ -22,11 +22,15 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatInputModule} from '@angular/material/input';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-import { RecPage2Component } from './rec-page2/rec-page2.component';
-import { RecPage3Component } from './rec-page3/rec-page3.component';
+import {RecPage2Component } from './rec-page2/rec-page2.component';
+import {RecPage3Component } from './rec-page3/rec-page3.component';
 import {MatMenuModule} from '@angular/material/menu';
 import { CommonModule } from '@angular/common';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatListModule} from '@angular/material/list';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 
 
@@ -64,9 +68,14 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     MatCheckboxModule,
     MatMenuModule,
     CommonModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatDividerModule,
+    MatListModule,
+    MatDialogModule,
+    MatSlideToggleModule
   ],
   providers: [],
-  bootstrap: [MenuComponent]
+  bootstrap: [MenuComponent],
+  exports: [MenuComponent]
 })
 export class AppModule { }

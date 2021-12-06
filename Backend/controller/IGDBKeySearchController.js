@@ -6,7 +6,7 @@ module.exports = (req,res) => {
         'url': 'https://api.igdb.com/v4/games/', // GAMES ENDPOINT
         'headers': {
             'Client-ID': 'yx9j15fb7kntnqe8xy0abmdfl04pnx',
-            'Authorization': 'Bearer ccappafd8ac20qkclxalotj1yh0mbh',
+            'Authorization': 'Bearer t1hcxh55lx04ekrbq3eizxl0trao5e',
             'Content-Type': 'text/plain'
         },
         body: 'fields name; limit 500; search "' + req.body.query + '";'
@@ -20,7 +20,7 @@ module.exports = (req,res) => {
         }
         // parse response
         resp = JSON.parse(response.body);
-        // console.log(resp); // print response
+        console.log(resp); // print response
 
         var finalData = [];
         for (var i in resp) {
@@ -28,7 +28,7 @@ module.exports = (req,res) => {
             finalData.push(name); 
             console.log(name);
         }
-        // console.log(finalData);
+        console.log(finalData);
         // return finalData;
         res.send(finalData).status(200)
     });
